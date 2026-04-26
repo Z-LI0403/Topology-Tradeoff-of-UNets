@@ -2,15 +2,7 @@
 Visualization module for UNet architecture analysis.
 
 Generates publication-quality plots comparing theoretical and empirical metrics
-across UNet, UNet++, and UNet3Plus architectures, following the style of
-no_free_lunch_architectures-main/visualization.ipynb.
-
-Usage:
-    python visualization.py                                 # visualize every experiment folder
-    python visualization.py --experiment depth=4            # visualize one experiment subtree
-    python visualization.py --experiment depth=4/seed42     # visualize one seed subtree
-    python visualization.py --compare_depths                # compare each architecture across depths
-    python visualization.py --compare_depths --model UNet3Plus
+across UNet, UNet++, and UNet3Plus architectures.
 """
 
 import os
