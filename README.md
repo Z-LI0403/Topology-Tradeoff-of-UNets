@@ -26,21 +26,16 @@ uv run python smoke_test_end_to_end.py
 
 ## 2. Dataset Setup
 
-The project currently supports two datasets:
-
-- `VOC2012`
-- `COCOStuff`
+The project currently uses the `VOC2012` dataset.
 
 Default dataset locations:
 
 - `VOC2012`: `dataset/VOC2012`
-- `COCOStuff`: `dataset/COCO-Stuff`
 
-You can override them with environment variables:
+You can override it with an environment variable:
 
 ```powershell
 $env:VOC2012_ROOT="D:/datasets/VOC2012"
-$env:COCOSTUFF_ROOT="D:/datasets/COCO-Stuff"
 ```
 
 Or pass the dataset path explicitly at runtime:
@@ -68,7 +63,7 @@ dataset/VOC2012/
 Key arguments in `main.py`:
 
 - `--arch`: `UNet` / `UNetPlusPlus` / `UNet3Plus` / `all`
-- `--dataset`: `VOC2012` / `COCOStuff`
+- `--dataset`: `VOC2012`
 - `--depth`: encoder depth, commonly `3`, `4`, or `5`
 - `--param_budget`: `2M` / `5M` / `10M` / `15M`
 - `--seeds`: comma-separated random seeds, for example `42,123,2024`
@@ -162,14 +157,6 @@ If you do not want to use the parameter-budget lookup table, you can override th
 
 ```powershell
 uv run python main.py --arch all --dataset VOC2012 --depth 5 --seeds 42,123,2024 --base_channels_unet 24 --base_channels_unetpp 22 --base_channels_unet3p 28 --output_dir experiments/manual_channels_depth5
-```
-
-### 5.5 COCO-Stuff Runs
-
-To run the same pipeline on `COCOStuff`, switch the dataset name and path:
-
-```powershell
-uv run python main.py --arch all --dataset COCOStuff --dataset_root dataset/COCO-Stuff --depth 5 --param_budget 5M --seeds 42 --output_dir experiments/cocostuff_depth5
 ```
 
 ## 6. Visualization Commands
