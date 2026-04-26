@@ -206,14 +206,7 @@ uv run python visualization.py --compare_depths --model UNetPlusPlus
 uv run python visualization.py --compare_depths --model UNet3Plus
 ```
 
-### 6.5 Generate Only the DAG Topology Plot
-
-```powershell
-uv run python visualization.py --dag_only
-uv run python visualization.py --experiment depth=4 --dag_only
-```
-
-Figures are saved to `figures/` by default. To export DAG PDFs, make sure the Graphviz `dot` executable is installed and available on `PATH`.
+Figures are saved to `figures/` by default.
 
 ## 7. Inference and Prediction Visualization
 
