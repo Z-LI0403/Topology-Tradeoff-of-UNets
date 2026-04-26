@@ -825,7 +825,7 @@ def plot_empirical_summary(
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def generate_for_target(target_dir: str, experiments_dir: str = "experiments", output_dir: str = "figures") -> bool:
+def generate_for_target(target_dir: str, experiments_dir: str = "experiments", output_dir: str = "visualization") -> bool:
     """Generate every visualization for one selected experiment target."""
     target_dir = os.path.abspath(target_dir)
     target_label = describe_target(target_dir, experiments_dir)
@@ -867,7 +867,7 @@ def generate_for_target(target_dir: str, experiments_dir: str = "experiments", o
 def generate_depth_comparison_for_model(
     model_name: str,
     records: list[dict],
-    output_dir: str = "figures",
+    output_dir: str = "visualization",
 ) -> bool:
     """Generate cross-depth comparison figures for one architecture family."""
     canonical_name = normalize_model_name(model_name)
@@ -901,7 +901,7 @@ def generate_depth_comparison_for_model(
 
 def generate_depth_comparisons(
     experiments_dir: str = "experiments",
-    output_dir: str = "figures",
+    output_dir: str = "visualization",
     models: list[str] | None = None,
 ):
     """Generate cross-depth comparisons for one or more architecture families."""
@@ -949,7 +949,7 @@ def resolve_requested_targets(experiments_dir: str, experiments: list[str] | Non
 
 def generate_all(
     experiments_dir: str = "experiments",
-    output_dir: str = "figures",
+    output_dir: str = "visualization",
     experiments: list[str] | None = None,
 ):
     """Generate visualizations for one or more experiment targets."""
@@ -973,7 +973,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate UNet analysis visualizations.")
     parser.add_argument("--experiments_dir", type=str, default="experiments",
                         help="Directory containing experiment results.")
-    parser.add_argument("--output_dir", type=str, default="figures",
+    parser.add_argument("--output_dir", type=str, default="visualization",
                         help="Directory to save generated figures.")
     parser.add_argument("--compare_depths", action="store_true",
                         help="Compare the same architecture across depths. Saves to <output_dir>/depth_comparison/<ModelName>.")
