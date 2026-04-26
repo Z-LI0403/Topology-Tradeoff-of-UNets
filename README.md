@@ -206,7 +206,7 @@ uv run python visualization.py --compare_depths --model UNetPlusPlus
 uv run python visualization.py --compare_depths --model UNet3Plus
 ```
 
-Figures are saved to `figures/` by default.
+Figures are saved to `visualization/` by default.
 
 ## 7. Inference and Prediction Visualization
 
