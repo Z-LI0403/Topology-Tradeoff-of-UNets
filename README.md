@@ -14,22 +14,6 @@ Each experiment combines three complementary views of an architecture:
 
 Theoretical measurements use a DAG-consistent `UNetDAG` surrogate, while segmentation experiments use the standalone models in [`models/`](models/).
 
-## Example Outputs
-
-### Architecture comparison at depth 5
-
-| Theoretical metrics | Training behavior |
-| --- | --- |
-| ![Theoretical comparison](figures/depth=5/theoretical_comparison.png) | ![Training curves](figures/depth=5/training_curves.png) |
-
-### UNet 3+ across network depths
-
-| Eigenvalue spectra | Empirical metrics |
-| --- | --- |
-| ![UNet 3+ eigenvalue spectra across depths](figures/depth_comparison/UNet3Plus/eigenvalue_spectrum.png) | ![UNet 3+ empirical summary across depths](figures/depth_comparison/UNet3Plus/empirical_summary.png) |
-
-These figures are generated from the experiment artifacts included in the repository. Some stored runs are partial; check the corresponding JSON and error files before drawing quantitative conclusions.
-
 ## Quick Start
 
 Requirements: Python 3.11 or later, [`uv`](https://docs.astral.sh/uv/), and Pascal VOC 2012.
